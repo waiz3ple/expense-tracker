@@ -1,27 +1,55 @@
-# React + TypeScript + Vite
+```
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An Expense Tracker application to help you keep track of your expenses. Please note that this version does not have backend functionality or uses local storage for data management.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js
+- npm
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installing
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+git clone https://github.com/waiz3ple/expense-tracker.git
+cd expense-tracker
+npm install
+
+```
+
+## Running the Application
+
+To start the development server, use:
+
+```
+
+npm run dev
+
+```
+
+The application will be available at [http://localhost:5173](http://localhost:5173).
+
+## Build
+
+To build the application for production, run:
+
+```
+
+npm run build
+
+```
+
+The optimized build will be located in the `dist` directory.
+
+## Update
+
+I will keep updating this mini tracker in the next couple of days.
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+```
