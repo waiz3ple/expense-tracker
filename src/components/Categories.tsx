@@ -1,6 +1,5 @@
 interface Categories {
-	options: string[];
-	//onSelected: (event: ChangeEvent<HTMLSelectElement>) => void;
+	options: readonly string[];
 	onSelectedCategory: (category: string) => void;
 }
 function Categories({ options, onSelectedCategory }: Categories) {
