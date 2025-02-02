@@ -5,7 +5,8 @@ import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from './components/ExpenseList';
 
 function App() {
-    const [expenses, setExpenses] = useState([
+    const [selectCategory, setSelectedCategory] = useState(''); // This is the initial state of the select element
+    const [expenses, setExpenses] = useState([   // This is the initial state of the expenses array similating a database
         { id: 1, description: 'Rent', amount: 1600, category: 'Housing' },
         { id: 2, description: 'Groceries', amount: 100, category: 'Food' },
         { id: 3, description: 'Gas', amount: 40, category: 'Transportation' },
@@ -16,18 +17,20 @@ function App() {
         { id: 8, description: 'Water', amount: 20, category: 'Utilities' },
         { id: 9, description: 'Electricity', amount: 50, category: 'Utilities' },
         { id: 10, description: 'Health insurance', amount: 200, category: 'Insurance' },
-    ]); // This is the initial state of the expenses array similating a database
- 
+    ]); 
+    
+    const visibleExpenses = selectCategory ? expenses.filter((expense) => expense.category === selectCategory) : expenses;
+    
 	return (
 		<div>
             <div className="mb-5">
                 < ExpenseForm onSubmit={ ()=> console.log()}/>
             </div>
             <div className="mb-5">
-                <ExpenseFilter onSelectCategory={ () => console.log() }/>
+                <ExpenseFilter onSelectCategory={ (category) => setSelectedCategory(category)}/>
             </div>
             <div className="mb-5">
-               <ExpenseList expenses={expenses} onDelete={(id)=> ( setExpenses( expenses.filter((expense) => expense.id !== id) ) )}/>
+               <ExpenseList expenses={visibleExpenses} onDelete={(id) => ( setExpenses( expenses.filter((expense) => expense.id !== id) ) )}/>
             </div>
 		</div>
 	);
