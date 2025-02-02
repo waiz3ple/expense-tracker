@@ -16,7 +16,7 @@ function App() {
         { id: 8, description: 'Water', amount: 20, category: 'Utilities' },
         { id: 9, description: 'Electricity', amount: 50, category: 'Utilities' },
         { id: 10, description: 'Health insurance', amount: 200, category: 'Insurance' },
-    ]);
+    ]); // This is the initial state of the expenses array similating a database
  
 	return (
 		<div>

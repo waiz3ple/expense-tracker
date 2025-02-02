@@ -1,3 +1,5 @@
+import { formatMoney } from './utils';
+
 interface Expense {
   id: number;
   description: string;
@@ -27,7 +29,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         {expenses.map((expense) => (
           <tr key={expense.id}>
             <td>{expense.description}</td>
-            <td>${expense.amount.toFixed(2)}</td>
+            <td>{formatMoney(expense.amount)}</td>
             <td>{expense.category}</td>
             <td>
               <button
@@ -43,7 +45,7 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
       <tfoot>
         <tr>
           <td>Total</td>
-          <td>${expenses.reduce((acc, expense) => expense.amount + acc, 0).toFixed(2)}</td>
+          <td>{formatMoney(expenses.reduce((acc, expense) => expense.amount + acc, 0))}</td>
           <td></td>
           <td></td>
         </tr>
