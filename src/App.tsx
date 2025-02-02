@@ -18,10 +18,6 @@ function App() {
         { id: 10, description: 'Health insurance', amount: 200, category: 'Insurance' },
     ]);
  
-    function onDelete(arg0: void): void {
-        throw new Error('Function not implemented.');
-    }
-
 	return (
 		<div>
             <div className="mb-5">
