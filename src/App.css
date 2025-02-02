@@ -1,3 +1,16 @@
 body {
-	margin: 2rem;
+	margin: 2rem 25% 0;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        margin: 2rem 15% 0;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 1.5rem 5% 0;
+    }
 }
