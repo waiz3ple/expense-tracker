@@ -1,7 +1,6 @@
-import categories from './categories';
-
+import categories from "./categories"; //CONSTANT
 interface Props { 
-  onSelectCategory: (category: string) => void;
+    onSelectCategory: (category: string) => void;
 }
 
 const ExpenseFilter = ({ onSelectCategory }: Props) => {
