@@ -3,6 +3,7 @@ import './App.css';
 import ExpenseFilter from './components/ExpenseFilter';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenseList from './components/ExpenseList';
+//import categories from './components/categories';
 
 function App() {
     const [selectCategory, setSelectedCategory] = useState(''); // This is the initial state of the select element
@@ -20,11 +21,11 @@ function App() {
     ]); 
     
     const visibleExpenses = selectCategory ? expenses.filter((expense) => expense.category === selectCategory) : expenses;
-    
+
 	return (
 		<div>
             <div className="mb-5">
-                < ExpenseForm onSubmit={ ()=> console.log()}/>
+                <ExpenseForm onSubmit={ (data)=> setExpenses([...expenses, {...data, id: expenses.length + 1}])}/>
             </div>
             <div className="mb-5">
                 <ExpenseFilter onSelectCategory={ (category) => setSelectedCategory(category)}/>

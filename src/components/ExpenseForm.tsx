@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import categories from "./categories";
 
-const schema = z.object({
+const schema = z.object({ 
   description: z.string().min(3, { message: 'Description should be at least 3 characters.'}).max(50),
   amount: z.number({ invalid_type_error: 'Amount is required.'}).min(0.01).max(100_000),
   category: z.enum(categories, {
@@ -11,10 +11,10 @@ const schema = z.object({
   }),
 });
 
-type ExpenseFormData = z.infer<typeof schema>;
+type ExpenseFormDataType = z.infer<typeof schema>;
 
 interface Props { 
-  onSubmit: (data: ExpenseFormData) => void;
+  onSubmit: (data: ExpenseFormDataType) => void;
 }
 
 const ExpenseForm = ({ onSubmit }: Props) => {
@@ -23,7 +23,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ExpenseFormData>({ resolver: zodResolver(schema) });
+  } = useForm<ExpenseFormDataType>({ resolver: zodResolver(schema) });
 
   return (
     <form onSubmit={handleSubmit(data => {
@@ -39,6 +39,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           id="description"
           type="text"
           className="form-control"
+          placeholder="Enter description"
         />
         {errors.description && (
           <p className="text-danger">{errors.description.message}</p>
@@ -53,6 +54,7 @@ const ExpenseForm = ({ onSubmit }: Props) => {
           id="amount"
           type="number"
           className="form-control"
+          placeholder=" Enter amount eg: 2.99"
         />
         {errors.amount && (
           <p className="text-danger">{errors.amount.message}</p>
